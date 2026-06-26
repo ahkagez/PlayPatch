@@ -1,0 +1,25 @@
+# Dependencies & build output
+node_modules
+.wxt
+.output
+*.zip
+stats.html
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Local config / secrets
+.env
+.env.*
+*.local
+web-ext.config.ts
+
+# Local AI assistant files
+.claude/
+.agents/
+CLAUDE.md
