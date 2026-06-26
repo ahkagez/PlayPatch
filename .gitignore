@@ -18,8 +18,3 @@ Thumbs.db
 .env.*
 *.local
 web-ext.config.ts
-
-# Local AI assistant files
-.claude/
-.agents/
-CLAUDE.md
