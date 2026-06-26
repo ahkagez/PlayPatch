@@ -8,7 +8,7 @@ export default defineConfig({
   manifest: {
     name: 'PlayPatch',
     description:
-      'Mejora YouTube: modo foco, limpieza del feed y Shorts, filtros, reproductor (volumen, velocidad, calidad, picture-in-picture) y recoloreado de la interfaz. Todo local.',
+      'Enhance YouTube: clean the feed, hide Shorts, upgrade the player, and recolor the interface. Everything local.',
     icons: {
       16: 'icon/16.png',
       32: 'icon/32.png',
