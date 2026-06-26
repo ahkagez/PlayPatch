@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'preact/hooks';
 import { loadSettings, watchSettings, saveSettings, lastCategoryStore } from '@/lib/storage';
+import { writeThemeCache } from '@/lib/theme-cache';
 import type { Settings } from '@/lib/types';
-import type { Locale } from '@/lib/i18n';
 import { YT_RED } from '@/lib/theme';
 import { I18nProvider } from '../i18n';
 import { SettingsShell } from '../templates/SettingsShell';
 import { CATEGORIES } from '../organisms/panels/registry';
 
-export function SettingsApp() {
+export function SettingsApp({ embedded = false }: { embedded?: boolean } = {}) {
   const [s, setS] = useState<Settings | null>(null);
   const [cat, setCat] = useState<string>(CATEGORIES[0].id);
   const [collapsed, setCollapsed] = useState(false);
@@ -15,6 +15,7 @@ export function SettingsApp() {
   useEffect(() => {
     Promise.all([loadSettings(), lastCategoryStore.getValue()]).then(([loaded, lastCat]) => {
       setS(loaded);
+      writeThemeCache(loaded.theme);
       if (lastCat && CATEGORIES.some((c) => c.id === lastCat)) setCat(lastCat);
     });
     const unwatch = watchSettings(setS);
@@ -28,6 +29,7 @@ export function SettingsApp() {
   const save = (next: Settings) => {
     setS(next);
     saveSettings(next);
+    writeThemeCache(next.theme);
   };
 
   const selectCat = (id: string) => {
@@ -47,8 +49,8 @@ export function SettingsApp() {
         items={CATEGORIES}
         activeId={cat}
         onSelect={selectCat}
-        language={s.language}
-        onLanguage={(lang: Locale) => save({ ...s, language: lang })}
+        theme={s.theme}
+        embedded={embedded}
       >
         <Panel s={s} save={save} />
       </SettingsShell>

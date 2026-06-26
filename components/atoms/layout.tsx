@@ -62,5 +62,5 @@ export function Grid2({ gap = space[4], children }: { gap?: number; children: Co
 }
 
 export function Divider() {
-  return <div role="separator" style={{ height: 1, background: 'rgba(255,255,255,0.06)' }} />;
+  return <div role="separator" style={{ height: 1, background: 'var(--yt-divider)' }} />;
 }

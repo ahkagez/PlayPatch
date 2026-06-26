@@ -20,6 +20,8 @@ const zh = {
   'general.reset': '重置',
   'general.resetConfirm': '重置所有设置？',
   'general.invalidJson': '该文件不是有效的 JSON。',
+  'general.launcher': 'YouTube 上的 PlayPatch 按钮',
+  'general.launcherHint': '在 YouTube 顶部栏显示一个按钮来打开这些设置。',
 
   'feed.title': '信息流与 Shorts',
   'feed.groupHide': '从信息流中隐藏',
@@ -67,6 +69,17 @@ const zh = {
   'player.newestComments': '评论：最新优先',
   'player.newestCommentsHint': '打开视频时按日期而非“热门”对评论排序。',
 
+  'player.groupPage': '视频页面',
+  'cat.optimize': '优化',
+  'optimize.title': '优化',
+  'optimize.ambientOff.label': '禁用环境光模式',
+  'optimize.ambientOff.hint': '移除视频背后的光晕（一个持续重绘的画布）。节省 CPU、GPU 和电量。',
+  'optimize.noHoverPreview.label': '禁用悬停预览',
+  'optimize.noHoverPreview.hint': '停止缩略图在悬停时自动播放预览。让信息流更轻快、消耗更少流量。',
+  'optimize.noAnimations.label': '禁用动画',
+  'optimize.noAnimations.hint': '移除界面的过渡与动画，让菜单和导航即时响应。',
+  'optimize.preconnect.label': '预连接服务器',
+  'optimize.preconnect.hint': '提前预热与 YouTube 资源服务器的连接，略微缩短加载时间。',
   'appearance.title': '主题',
   'appearance.palette': '调色板',
   'appearance.custom': '自定义',
@@ -120,6 +133,12 @@ const zh = {
   'color.magenta': '品红色',
   'color.fuchsia': '紫红色',
   'color.raspberry': '树莓红',
+  'general.appearance': '此窗口',
+  'general.theme': '浅色 / 深色模式',
+  'general.themeHint': '此设置窗口的明暗配色。',
+  'theme.system': '跟随系统',
+  'theme.dark': '深色',
+  'theme.light': '浅色',
 };
 
 export default zh;

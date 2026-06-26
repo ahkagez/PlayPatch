@@ -1,5 +1,6 @@
 import type { Settings } from './types';
 import { ACCENT_GROUPS } from './accent-groups';
+import { detectLocale } from './i18n';
 
 export const DEFAULT_SETTINGS: Settings = {
   enabledOnYouTube: true,
@@ -30,6 +31,14 @@ export const DEFAULT_SETTINGS: Settings = {
     wheelVolume: true,
     newestComments: false,
   },
+  performance: {
+    ambientOff: false,
+    noHoverPreview: false,
+    noAnimations: false,
+    preconnect: true,
+  },
   channels: {},
-  language: 'en',
+  language: detectLocale(),
+  theme: 'system',
+  showLauncher: true,
 };

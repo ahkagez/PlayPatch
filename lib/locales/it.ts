@@ -20,6 +20,8 @@ const it = {
   'general.reset': 'Ripristina',
   'general.resetConfirm': 'Ripristinare tutte le impostazioni?',
   'general.invalidJson': 'Il file non è un JSON valido.',
+  'general.launcher': 'Pulsante PlayPatch su YouTube',
+  'general.launcherHint': 'Mostra un pulsante nella barra superiore di YouTube per aprire queste impostazioni.',
 
   'feed.title': 'Feed e Shorts',
   'feed.groupHide': 'Nascondi dal feed',
@@ -67,6 +69,17 @@ const it = {
   'player.newestComments': 'Commenti: prima i più recenti',
   'player.newestCommentsHint': 'Ordina i commenti per data invece di "Più rilevanti" all\'apertura di un video.',
 
+  'player.groupPage': 'Pagina del video',
+  'cat.optimize': 'Ottimizzazione',
+  'optimize.title': 'Ottimizzazione',
+  'optimize.ambientOff.label': 'Disattiva la modalità ambiente',
+  'optimize.ambientOff.hint': 'Rimuove il bagliore dietro al video (un canvas che si ridisegna di continuo). Risparmia CPU, GPU e batteria.',
+  'optimize.noHoverPreview.label': 'Niente anteprime al passaggio del mouse',
+  'optimize.noHoverPreview.hint': 'Impedisce alle miniature di riprodurre automaticamente un\'anteprima al passaggio del mouse. Feed più leggero, meno dati.',
+  'optimize.noAnimations.label': 'Disattiva le animazioni',
+  'optimize.noAnimations.hint': 'Rimuove transizioni e animazioni dell\'interfaccia, così menu e navigazione risultano istantanei.',
+  'optimize.preconnect.label': 'Preconnessione ai server',
+  'optimize.preconnect.hint': 'Prepara la connessione ai server delle risorse di YouTube per ridurre un po\' i tempi di caricamento.',
   'appearance.title': 'Tema',
   'appearance.palette': 'Palette',
   'appearance.custom': 'Personalizzato',
@@ -120,6 +133,12 @@ const it = {
   'color.magenta': 'Magenta',
   'color.fuchsia': 'Fucsia',
   'color.raspberry': 'Lampone',
+  'general.appearance': 'Questa finestra',
+  'general.theme': 'Modalità chiara / scura',
+  'general.themeHint': 'Colori chiari o scuri di questa finestra delle impostazioni.',
+  'theme.system': 'Sistema',
+  'theme.dark': 'Scuro',
+  'theme.light': 'Chiaro',
 };
 
 export default it;

@@ -1,5 +1,4 @@
 import { YT, space, size as sz, fontSize, fontWeight } from '@/lib/theme';
-import { LOCALES, type Locale } from '@/lib/i18n';
 import { useT } from '../i18n';
 import { IconButton } from '../atoms/IconButton';
 import { MenuIcon } from '../atoms/Icon';
@@ -7,13 +6,9 @@ import { MenuIcon } from '../atoms/Icon';
 export function Masthead({
   collapsed,
   onToggle,
-  language,
-  onLanguage,
 }: {
   collapsed: boolean;
   onToggle: () => void;
-  language: Locale;
-  onLanguage: (lang: Locale) => void;
 }) {
   const t = useT();
   return (
@@ -40,27 +35,13 @@ export function Masthead({
             width: 24,
             height: 24,
             display: 'block',
-            background: '#fff',
+            background: YT.text,
             WebkitMask: 'url(/icon/48.png) center / contain no-repeat',
             mask: 'url(/icon/48.png) center / contain no-repeat',
           }}
         />
         <span style={{ fontSize: fontSize.xxl, fontWeight: fontWeight.medium, letterSpacing: '-1px', color: YT.text }}>PlayPatch</span>
       </div>
-      <select
-        className="foco-select"
-        value={language}
-        aria-label={t('nav.language')}
-        title={t('nav.language')}
-        onChange={(e) => onLanguage((e.target as HTMLSelectElement).value as Locale)}
-        style={{ marginLeft: 'auto' }}
-      >
-        {LOCALES.map((l) => (
-          <option key={l.code} value={l.code}>
-            {l.label}
-          </option>
-        ))}
-      </select>
     </header>
   );
 }

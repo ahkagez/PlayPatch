@@ -10,7 +10,7 @@ export function ColorBall({ color, size = sz.ball }: { color: string; size?: num
         flex: 'none',
         borderRadius: '50%',
         background: color,
-        border: '1px solid rgba(255,255,255,0.18)',
+        border: '1px solid var(--yt-ring)',
         boxShadow: `0 0 0 5px ${color}26`,
       }}
     />

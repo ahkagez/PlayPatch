@@ -20,6 +20,8 @@ const tr = {
   'general.reset': 'Sıfırla',
   'general.resetConfirm': 'Tüm ayarlar sıfırlansın mı?',
   'general.invalidJson': 'Dosya geçerli bir JSON değil.',
+  'general.launcher': "YouTube'da PlayPatch düğmesi",
+  'general.launcherHint': "Bu ayarları açmak için YouTube'un üst çubuğunda bir düğme gösterir.",
 
   'feed.title': 'Akış ve Shorts',
   'feed.groupHide': 'Akıştan gizle',
@@ -67,6 +69,17 @@ const tr = {
   'player.newestComments': 'Yorumlar: önce en yeni',
   'player.newestCommentsHint': 'Bir video açılırken yorumları "Öne çıkanlar" yerine tarihe göre sıralar.',
 
+  'player.groupPage': 'Video sayfası',
+  'cat.optimize': 'Optimizasyon',
+  'optimize.title': 'Optimizasyon',
+  'optimize.ambientOff.label': 'Ortam modunu kapat',
+  'optimize.ambientOff.hint': 'Videonun arkasındaki ışıltıyı (sürekli yeniden çizilen bir canvas) kaldırır. CPU, GPU ve pil tasarrufu sağlar.',
+  'optimize.noHoverPreview.label': 'Üzerine gelince önizleme yok',
+  'optimize.noHoverPreview.hint': 'Üzerine geldiğinizde küçük resimlerin önizleme oynatmasını engeller. Daha hafif akış, daha az veri.',
+  'optimize.noAnimations.label': 'Animasyonları kapat',
+  'optimize.noAnimations.hint': 'Arayüz geçişlerini ve animasyonlarını kaldırır, böylece menüler ve gezinme anında hissedilir.',
+  'optimize.preconnect.label': 'Sunuculara ön bağlantı kur',
+  'optimize.preconnect.hint': 'YouTube\'un içerik sunucularına olan bağlantıyı ısıtarak yükleme süresinden biraz kısar.',
   'appearance.title': 'Tema',
   'appearance.palette': 'Palet',
   'appearance.custom': 'Özel',
@@ -120,6 +133,12 @@ const tr = {
   'color.magenta': 'Macenta',
   'color.fuchsia': 'Fuşya',
   'color.raspberry': 'Ahududu',
+  'general.appearance': 'Bu pencere',
+  'general.theme': 'Açık / koyu mod',
+  'general.themeHint': 'Bu ayarlar penceresi için açık veya koyu renkler.',
+  'theme.system': 'Sistem',
+  'theme.dark': 'Koyu',
+  'theme.light': 'Açık',
 };
 
 export default tr;

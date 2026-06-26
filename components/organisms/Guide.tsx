@@ -56,7 +56,7 @@ const guide: JSX.CSSProperties = {
   flexDirection: 'column',
   flex: 'none',
   padding: `${space[6]}px ${space[4]}px`,
-  borderRight: '1px solid rgba(255,255,255,0.06)',
+  borderRight: '1px solid var(--yt-divider)',
   overflowY: 'auto',
   transition: transition.width,
 };

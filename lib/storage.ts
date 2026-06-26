@@ -20,8 +20,11 @@ function normalize(raw: any): Settings {
       extras: { ...d.appearance.extras, ...(r.appearance?.extras ?? {}) },
     },
     player: { ...d.player, ...(r.player ?? {}) },
+    performance: { ...d.performance, ...(r.performance ?? {}) },
     channels: r.channels ?? d.channels,
     language: isLocale(r.language) ? r.language : detectLocale(),
+    theme: r.theme === 'dark' || r.theme === 'light' || r.theme === 'system' ? r.theme : d.theme,
+    showLauncher: typeof r.showLauncher === 'boolean' ? r.showLauncher : d.showLauncher,
   };
 }
 

@@ -25,7 +25,7 @@ export function Switch({ on, onClick }: { on: boolean; onClick: () => void }) {
           width: size.switchW - 2,
           height: size.track,
           borderRadius: size.track / 2,
-          background: on ? 'var(--foco-brand-soft)' : 'rgba(255,255,255,0.22)',
+          background: on ? 'var(--foco-brand-soft)' : 'var(--yt-track)',
           transition: `background ${duration.slow}`,
         }}
       />

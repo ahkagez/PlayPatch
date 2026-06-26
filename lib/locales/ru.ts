@@ -20,6 +20,8 @@ const ru = {
   'general.reset': 'Сброс',
   'general.resetConfirm': 'Сбросить все настройки?',
   'general.invalidJson': 'Файл не является корректным JSON.',
+  'general.launcher': 'Кнопка PlayPatch на YouTube',
+  'general.launcherHint': 'Показывает кнопку в верхней панели YouTube для открытия этих настроек.',
 
   'feed.title': 'Лента и Shorts',
   'feed.groupHide': 'Скрыть из ленты',
@@ -67,6 +69,17 @@ const ru = {
   'player.newestComments': 'Комментарии: сначала новые',
   'player.newestCommentsHint': 'Сортирует комментарии по дате вместо «Топ» при открытии видео.',
 
+  'player.groupPage': 'Страница видео',
+  'cat.optimize': 'Оптимизация',
+  'optimize.title': 'Оптимизация',
+  'optimize.ambientOff.label': 'Отключить режим окружения',
+  'optimize.ambientOff.hint': 'Убирает свечение за видео (холст, который постоянно перерисовывается). Экономит CPU, GPU и заряд батареи.',
+  'optimize.noHoverPreview.label': 'Без превью при наведении',
+  'optimize.noHoverPreview.hint': 'Останавливает автовоспроизведение превью на миниатюрах при наведении. Лента легче, меньше трафика.',
+  'optimize.noAnimations.label': 'Отключить анимации',
+  'optimize.noAnimations.hint': 'Убирает переходы и анимации интерфейса, чтобы меню и навигация работали мгновенно.',
+  'optimize.preconnect.label': 'Предварительное подключение к серверам',
+  'optimize.preconnect.hint': 'Прогревает соединение с серверами ресурсов YouTube, чтобы немного сократить время загрузки.',
   'appearance.title': 'Тема',
   'appearance.palette': 'Палитра',
   'appearance.custom': 'Свой',
@@ -120,6 +133,12 @@ const ru = {
   'color.magenta': 'Маджента',
   'color.fuchsia': 'Фуксия',
   'color.raspberry': 'Малиновый',
+  'general.appearance': 'Это окно',
+  'general.theme': 'Светлый / тёмный режим',
+  'general.themeHint': 'Светлые или тёмные цвета этого окна настроек.',
+  'theme.system': 'Системная',
+  'theme.dark': 'Тёмная',
+  'theme.light': 'Светлая',
 };
 
 export default ru;

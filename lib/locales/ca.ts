@@ -20,6 +20,8 @@ const ca = {
   'general.reset': 'Restableix',
   'general.resetConfirm': 'Vols restablir tots els ajustos?',
   'general.invalidJson': 'El fitxer no és un JSON vàlid.',
+  'general.launcher': 'Botó de PlayPatch a YouTube',
+  'general.launcherHint': 'Mostra un botó a la barra superior de YouTube per obrir aquests ajustaments.',
 
   'feed.title': 'Feed i Shorts',
   'feed.groupHide': 'Amaga del feed',
@@ -67,6 +69,17 @@ const ca = {
   'player.newestComments': 'Comentaris: primer els més recents',
   'player.newestCommentsHint': 'Ordena els comentaris per data en lloc de "Destacats" en obrir un vídeo.',
 
+  'player.groupPage': 'Pàgina del vídeo',
+  'cat.optimize': 'Optimització',
+  'optimize.title': 'Optimització',
+  'optimize.ambientOff.label': 'Desactiva el mode ambient',
+  'optimize.ambientOff.hint': 'Elimina la lluïssor darrere del vídeo (un canvas que es repinta constantment). Estalvia CPU, GPU i bateria.',
+  'optimize.noHoverPreview.label': 'Sense vistes prèvies en passar el cursor',
+  'optimize.noHoverPreview.hint': 'Evita que les miniatures reprodueixin automàticament una vista prèvia en passar-hi el cursor. Feed més lleuger, menys dades.',
+  'optimize.noAnimations.label': 'Desactiva les animacions',
+  'optimize.noAnimations.hint': 'Elimina les transicions i animacions de la interfície perquè els menús i la navegació semblin instantanis.',
+  'optimize.preconnect.label': 'Preconnecta als servidors',
+  'optimize.preconnect.hint': 'Escalfa la connexió amb els servidors d\'actius de YouTube per retallar una mica el temps de càrrega.',
   'appearance.title': 'Tema',
   'appearance.palette': 'Paleta',
   'appearance.custom': 'Personalitzat',
@@ -120,6 +133,12 @@ const ca = {
   'color.magenta': 'Magenta',
   'color.fuchsia': 'Fúcsia',
   'color.raspberry': 'Gerd',
+  'general.appearance': 'Aquesta finestra',
+  'general.theme': 'Mode clar / fosc',
+  'general.themeHint': "Colors clars o foscos d'aquesta finestra d'ajustaments.",
+  'theme.system': 'Sistema',
+  'theme.dark': 'Fosc',
+  'theme.light': 'Clar',
 };
 
 export default ca;

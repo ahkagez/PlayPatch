@@ -33,6 +33,12 @@ export function PlayerPanel({ s, save }: PanelProps) {
           hint={t('player.volumeHint')}
           onChange={(v) => setPlayer({ volumeBoost: v })}
         />
+        <Toggle
+          label={t('player.wheelVolume')}
+          hint={t('player.wheelVolumeHint')}
+          on={s.player.wheelVolume}
+          onChange={(v) => setPlayer({ wheelVolume: v })}
+        />
         <SliderField
           label={t('player.speed')}
           value={s.player.speed}
@@ -66,12 +72,9 @@ export function PlayerPanel({ s, save }: PanelProps) {
           hint={t('player.thicknessHint')}
           onChange={(v) => setPlayer({ progressThickness: v })}
         />
-        <Toggle
-          label={t('player.wheelVolume')}
-          hint={t('player.wheelVolumeHint')}
-          on={s.player.wheelVolume}
-          onChange={(v) => setPlayer({ wheelVolume: v })}
-        />
+      </Stack>
+      <Text role="sub">{t('player.groupPage')}</Text>
+      <Stack gap={space[4]} style={{ marginTop: space[4] }}>
         <Toggle
           label={t('player.newestComments')}
           hint={t('player.newestCommentsHint')}

@@ -8,6 +8,7 @@ const en = {
   'cat.general': 'General',
   'cat.feed': 'Feed & Shorts',
   'cat.player': 'Player',
+  'cat.optimize': 'Optimization',
   'cat.appearance': 'Theme',
 
   'general.title': 'General',
@@ -20,6 +21,8 @@ const en = {
   'general.reset': 'Reset',
   'general.resetConfirm': 'Reset all settings?',
   'general.invalidJson': 'The file is not valid JSON.',
+  'general.launcher': 'PlayPatch button on YouTube',
+  'general.launcherHint': "Shows a button in YouTube's top bar to open these settings.",
 
   'feed.title': 'Feed & Shorts',
   'feed.groupHide': 'Hide from the feed',
@@ -66,6 +69,18 @@ const en = {
   'player.wheelVolumeHint': 'Raise or lower the volume by scrolling the wheel with the cursor over the player.',
   'player.newestComments': 'Comments: newest first',
   'player.newestCommentsHint': 'Sorts comments by date instead of "Top" when opening a video.',
+
+  'player.groupPage': 'Watch page',
+
+  'optimize.title': 'Optimization',
+  'optimize.ambientOff.label': 'Disable ambient mode',
+  'optimize.ambientOff.hint': 'Removes the glow behind the video (a canvas that repaints constantly). Saves CPU, GPU and battery.',
+  'optimize.noHoverPreview.label': 'No hover previews',
+  'optimize.noHoverPreview.hint': 'Stops thumbnails from autoplaying a preview when you hover. Lighter feed, less data.',
+  'optimize.noAnimations.label': 'Disable animations',
+  'optimize.noAnimations.hint': 'Removes interface transitions and animations so menus and navigation feel instant.',
+  'optimize.preconnect.label': 'Preconnect to servers',
+  'optimize.preconnect.hint': "Warms up the connection to YouTube's asset servers to shave a bit off load time.",
 
   'appearance.title': 'Theme',
   'appearance.palette': 'Palette',
@@ -120,6 +135,12 @@ const en = {
   'color.magenta': 'Magenta',
   'color.fuchsia': 'Fuchsia',
   'color.raspberry': 'Raspberry',
+  'general.appearance': 'This window',
+  'general.theme': 'Light / dark mode',
+  'general.themeHint': 'Light or dark colors for this settings window.',
+  'theme.system': 'System',
+  'theme.dark': 'Dark',
+  'theme.light': 'Light',
 };
 
 export default en;

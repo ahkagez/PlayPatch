@@ -1,7 +1,7 @@
 import type { JSX } from 'preact';
 import { ACCENT } from '@/lib/theme';
 
-export type IconName = 'general' | 'feed' | 'speed' | 'player' | 'appearance';
+export type IconName = 'general' | 'feed' | 'speed' | 'player' | 'appearance' | 'optimize';
 
 export function Icon({ name, size = 24 }: { name: IconName; size?: number }) {
   const p: JSX.SVGAttributes<SVGSVGElement> = {
@@ -51,6 +51,15 @@ export function Icon({ name, size = 24 }: { name: IconName; size?: number }) {
         <svg {...p}>
           <path d="M12 3.5c0 0 5.5 5.4 5.5 9.4a5.5 5.5 0 0 1-11 0C6.5 8.9 12 3.5 12 3.5Z" />
           <path d="M9.4 13.6a2.6 2.6 0 0 0 2.6 2.4" />
+        </svg>
+      );
+    case 'optimize':
+      return (
+        <svg {...p}>
+          <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09Z" />
+          <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2Z" />
+          <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+          <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
         </svg>
       );
   }

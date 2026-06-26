@@ -8,6 +8,7 @@ const es = {
   'cat.general': 'General',
   'cat.feed': 'Feed y Shorts',
   'cat.player': 'Reproductor',
+  'cat.optimize': 'Optimización',
   'cat.appearance': 'Tema',
 
   'general.title': 'General',
@@ -20,6 +21,8 @@ const es = {
   'general.reset': 'Restablecer',
   'general.resetConfirm': '¿Restablecer todos los ajustes?',
   'general.invalidJson': 'El archivo no es un JSON válido.',
+  'general.launcher': 'Botón de PlayPatch en YouTube',
+  'general.launcherHint': 'Muestra un botón en la barra superior de YouTube para abrir estos ajustes.',
 
   'feed.title': 'Feed y Shorts',
   'feed.groupHide': 'Ocultar del feed',
@@ -66,6 +69,18 @@ const es = {
   'player.wheelVolumeHint': 'Sube o baja el volumen girando la rueda con el cursor sobre el reproductor.',
   'player.newestComments': 'Comentarios: más recientes primero',
   'player.newestCommentsHint': "Ordena los comentarios por fecha en vez de 'Destacados' al abrir un vídeo.",
+
+  'player.groupPage': 'Página de vídeo',
+
+  'optimize.title': 'Optimización',
+  'optimize.ambientOff.label': 'Desactivar modo ambiente',
+  'optimize.ambientOff.hint': 'Quita el resplandor detrás del vídeo (un canvas que repinta sin parar). Ahorra CPU, GPU y batería.',
+  'optimize.noHoverPreview.label': 'Sin preview al pasar el ratón',
+  'optimize.noHoverPreview.hint': 'Evita que las miniaturas reproduzcan un preview al pasar el ratón. Feed más ligero, menos datos.',
+  'optimize.noAnimations.label': 'Desactivar animaciones',
+  'optimize.noAnimations.hint': 'Quita transiciones y animaciones de la interfaz para que menús y navegación vayan al instante.',
+  'optimize.preconnect.label': 'Preconexión a servidores',
+  'optimize.preconnect.hint': 'Calienta la conexión a los servidores de recursos de YouTube para recortar algo el tiempo de carga.',
 
   'appearance.title': 'Tema',
   'appearance.palette': 'Paleta',
@@ -120,6 +135,12 @@ const es = {
   'color.magenta': 'Magenta',
   'color.fuchsia': 'Fucsia',
   'color.raspberry': 'Frambuesa',
+  'general.appearance': 'Esta ventana',
+  'general.theme': 'Modo claro / oscuro',
+  'general.themeHint': 'Colores claros u oscuros de esta ventana de ajustes.',
+  'theme.system': 'Sistema',
+  'theme.dark': 'Oscuro',
+  'theme.light': 'Claro',
 };
 
 export default es;

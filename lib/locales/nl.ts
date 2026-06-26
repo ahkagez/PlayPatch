@@ -20,6 +20,8 @@ const nl = {
   'general.reset': 'Resetten',
   'general.resetConfirm': 'Alle instellingen resetten?',
   'general.invalidJson': 'Het bestand is geen geldige JSON.',
+  'general.launcher': 'PlayPatch-knop op YouTube',
+  'general.launcherHint': 'Toont een knop in de bovenbalk van YouTube om deze instellingen te openen.',
 
   'feed.title': 'Feed & Shorts',
   'feed.groupHide': 'Verbergen uit de feed',
@@ -67,6 +69,17 @@ const nl = {
   'player.newestComments': 'Reacties: nieuwste eerst',
   'player.newestCommentsHint': 'Sorteert reacties op datum in plaats van "Top" bij het openen van een video.',
 
+  'player.groupPage': 'Videopagina',
+  'cat.optimize': 'Optimalisatie',
+  'optimize.title': 'Optimalisatie',
+  'optimize.ambientOff.label': 'Ambient-modus uitschakelen',
+  'optimize.ambientOff.hint': 'Verwijdert de gloed achter de video (een canvas dat voortdurend opnieuw wordt getekend). Bespaart CPU, GPU en batterij.',
+  'optimize.noHoverPreview.label': 'Geen voorvertoning bij hover',
+  'optimize.noHoverPreview.hint': 'Voorkomt dat thumbnails automatisch een voorvertoning afspelen wanneer je eroverheen beweegt. Lichtere feed, minder data.',
+  'optimize.noAnimations.label': 'Animaties uitschakelen',
+  'optimize.noAnimations.hint': 'Verwijdert interfaceovergangen en animaties zodat menu\'s en navigatie direct aanvoelen.',
+  'optimize.preconnect.label': 'Vooraf verbinden met servers',
+  'optimize.preconnect.hint': 'Warmt de verbinding met de assetservers van YouTube op om de laadtijd iets te verkorten.',
   'appearance.title': 'Thema',
   'appearance.palette': 'Palet',
   'appearance.custom': 'Aangepast',
@@ -120,6 +133,12 @@ const nl = {
   'color.magenta': 'Magenta',
   'color.fuchsia': 'Fuchsia',
   'color.raspberry': 'Framboos',
+  'general.appearance': 'Dit venster',
+  'general.theme': 'Lichte / donkere modus',
+  'general.themeHint': 'Lichte of donkere kleuren voor dit instellingenvenster.',
+  'theme.system': 'Systeem',
+  'theme.dark': 'Donker',
+  'theme.light': 'Licht',
 };
 
 export default nl;

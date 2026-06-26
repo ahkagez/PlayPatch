@@ -20,6 +20,8 @@ const pt = {
   'general.reset': 'Repor',
   'general.resetConfirm': 'Repor todas as definições?',
   'general.invalidJson': 'O ficheiro não é JSON válido.',
+  'general.launcher': 'Botão do PlayPatch no YouTube',
+  'general.launcherHint': 'Mostra um botão na barra superior do YouTube para abrir estas definições.',
 
   'feed.title': 'Feed e Shorts',
   'feed.groupHide': 'Ocultar do feed',
@@ -67,6 +69,17 @@ const pt = {
   'player.newestComments': 'Comentários: mais recentes primeiro',
   'player.newestCommentsHint': 'Ordena os comentários por data em vez de "Principais" ao abrir um vídeo.',
 
+  'player.groupPage': 'Página do vídeo',
+  'cat.optimize': 'Otimização',
+  'optimize.title': 'Otimização',
+  'optimize.ambientOff.label': 'Desativar modo ambiente',
+  'optimize.ambientOff.hint': 'Remove o brilho atrás do vídeo (uma canvas que se repinta constantemente). Poupa CPU, GPU e bateria.',
+  'optimize.noHoverPreview.label': 'Sem pré-visualizações ao passar o rato',
+  'optimize.noHoverPreview.hint': 'Impede as miniaturas de reproduzir automaticamente uma pré-visualização ao passar o rato. Feed mais leve, menos dados.',
+  'optimize.noAnimations.label': 'Desativar animações',
+  'optimize.noAnimations.hint': 'Remove as transições e animações da interface para que os menus e a navegação pareçam instantâneos.',
+  'optimize.preconnect.label': 'Pré-ligar aos servidores',
+  'optimize.preconnect.hint': 'Aquece a ligação aos servidores de recursos do YouTube para reduzir um pouco o tempo de carregamento.',
   'appearance.title': 'Tema',
   'appearance.palette': 'Paleta',
   'appearance.custom': 'Personalizada',
@@ -120,6 +133,12 @@ const pt = {
   'color.magenta': 'Magenta',
   'color.fuchsia': 'Fúcsia',
   'color.raspberry': 'Framboesa',
+  'general.appearance': 'Esta janela',
+  'general.theme': 'Modo claro / escuro',
+  'general.themeHint': 'Cores claras ou escuras desta janela de ajustes.',
+  'theme.system': 'Sistema',
+  'theme.dark': 'Escuro',
+  'theme.light': 'Claro',
 };
 
 export default pt;

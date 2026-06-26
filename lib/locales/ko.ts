@@ -20,6 +20,8 @@ const ko = {
   'general.reset': '초기화',
   'general.resetConfirm': '모든 설정을 초기화할까요?',
   'general.invalidJson': '유효한 JSON 파일이 아닙니다.',
+  'general.launcher': 'YouTube의 PlayPatch 버튼',
+  'general.launcherHint': '이 설정을 여는 버튼을 YouTube 상단 바에 표시합니다.',
 
   'feed.title': '피드 및 Shorts',
   'feed.groupHide': '피드에서 숨기기',
@@ -67,6 +69,17 @@ const ko = {
   'player.newestComments': '댓글: 최신순',
   'player.newestCommentsHint': '동영상을 열 때 댓글을 "인기순" 대신 날짜순으로 정렬합니다.',
 
+  'player.groupPage': '동영상 페이지',
+  'cat.optimize': '최적화',
+  'optimize.title': '최적화',
+  'optimize.ambientOff.label': '주변광 모드 끄기',
+  'optimize.ambientOff.hint': '동영상 뒤의 글로우 효과(끊임없이 다시 그려지는 캔버스)를 제거합니다. CPU, GPU, 배터리를 절약합니다.',
+  'optimize.noHoverPreview.label': '마우스 오버 미리보기 끄기',
+  'optimize.noHoverPreview.hint': '썸네일에 마우스를 올렸을 때 미리보기가 자동 재생되지 않도록 합니다. 피드가 가벼워지고 데이터를 절약합니다.',
+  'optimize.noAnimations.label': '애니메이션 끄기',
+  'optimize.noAnimations.hint': '인터페이스 전환과 애니메이션을 제거하여 메뉴와 탐색이 즉각적으로 느껴지도록 합니다.',
+  'optimize.preconnect.label': '서버에 미리 연결',
+  'optimize.preconnect.hint': 'YouTube의 에셋 서버 연결을 미리 준비하여 로딩 시간을 약간 단축합니다.',
   'appearance.title': '테마',
   'appearance.palette': '팔레트',
   'appearance.custom': '사용자 지정',
@@ -120,6 +133,12 @@ const ko = {
   'color.magenta': '마젠타',
   'color.fuchsia': '푸시아',
   'color.raspberry': '라즈베리',
+  'general.appearance': '이 창',
+  'general.theme': '밝게 / 어둡게 모드',
+  'general.themeHint': '이 설정 창의 밝거나 어두운 색상.',
+  'theme.system': '시스템',
+  'theme.dark': '어둡게',
+  'theme.light': '밝게',
 };
 
 export default ko;

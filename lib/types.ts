@@ -1,4 +1,5 @@
 import type { Locale } from './i18n';
+import type { ThemeMode } from './theme';
 
 export interface ChannelPrefs {
   channelId: string;
@@ -41,11 +42,21 @@ export interface PlayerSettings {
   newestComments: boolean;
 }
 
+export interface PerformanceSettings {
+  ambientOff: boolean;
+  noHoverPreview: boolean;
+  noAnimations: boolean;
+  preconnect: boolean;
+}
+
 export interface Settings {
   enabledOnYouTube: boolean;
   feed: FeedSettings;
   appearance: AppearanceSettings;
   player: PlayerSettings;
+  performance: PerformanceSettings;
   channels: Record<string, ChannelPrefs>;
   language: Locale;
+  theme: ThemeMode;
+  showLauncher: boolean;
 }

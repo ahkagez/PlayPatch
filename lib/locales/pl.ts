@@ -20,6 +20,8 @@ const pl = {
   'general.reset': 'Resetuj',
   'general.resetConfirm': 'Zresetować wszystkie ustawienia?',
   'general.invalidJson': 'Plik nie jest prawidłowym formatem JSON.',
+  'general.launcher': 'Przycisk PlayPatch na YouTube',
+  'general.launcherHint': 'Pokazuje przycisk na górnym pasku YouTube, aby otworzyć te ustawienia.',
 
   'feed.title': 'Kanał i Shorts',
   'feed.groupHide': 'Ukryj z kanału',
@@ -67,6 +69,17 @@ const pl = {
   'player.newestComments': 'Komentarze: najpierw najnowsze',
   'player.newestCommentsHint': 'Sortuje komentarze według daty zamiast „Najpopularniejsze” przy otwieraniu filmu.',
 
+  'player.groupPage': 'Strona wideo',
+  'cat.optimize': 'Optymalizacja',
+  'optimize.title': 'Optymalizacja',
+  'optimize.ambientOff.label': 'Wyłącz tryb ambient',
+  'optimize.ambientOff.hint': 'Usuwa poświatę za filmem (kanwa, która ciągle się przerysowuje). Oszczędza CPU, GPU i baterię.',
+  'optimize.noHoverPreview.label': 'Bez podglądów po najechaniu',
+  'optimize.noHoverPreview.hint': 'Zatrzymuje automatyczne odtwarzanie podglądu miniatur po najechaniu kursorem. Lżejszy kanał, mniej danych.',
+  'optimize.noAnimations.label': 'Wyłącz animacje',
+  'optimize.noAnimations.hint': 'Usuwa przejścia i animacje interfejsu, dzięki czemu menu i nawigacja działają natychmiast.',
+  'optimize.preconnect.label': 'Wstępne połączenie z serwerami',
+  'optimize.preconnect.hint': 'Rozgrzewa połączenie z serwerami zasobów YouTube, aby nieco skrócić czas ładowania.',
   'appearance.title': 'Motyw',
   'appearance.palette': 'Paleta',
   'appearance.custom': 'Niestandardowy',
@@ -120,6 +133,12 @@ const pl = {
   'color.magenta': 'Magenta',
   'color.fuchsia': 'Fuksja',
   'color.raspberry': 'Malinowy',
+  'general.appearance': 'To okno',
+  'general.theme': 'Tryb jasny / ciemny',
+  'general.themeHint': 'Jasne lub ciemne kolory tego okna ustawień.',
+  'theme.system': 'Systemowy',
+  'theme.dark': 'Ciemny',
+  'theme.light': 'Jasny',
 };
 
 export default pl;

@@ -28,7 +28,7 @@ export function Swatch({
         border: 'none',
         cursor: 'pointer',
         background: color,
-        boxShadow: selected ? `0 0 0 2px ${YT.black}, 0 0 0 4px #fff` : 'none',
+        boxShadow: selected ? `0 0 0 2px ${YT.black}, 0 0 0 4px ${YT.text}` : 'none',
       }}
     />
   );

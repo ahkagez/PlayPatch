@@ -20,6 +20,8 @@ const de = {
   'general.reset': 'Zurücksetzen',
   'general.resetConfirm': 'Alle Einstellungen zurücksetzen?',
   'general.invalidJson': 'Die Datei ist kein gültiges JSON.',
+  'general.launcher': 'PlayPatch-Schaltfläche auf YouTube',
+  'general.launcherHint': 'Zeigt eine Schaltfläche in der oberen Leiste von YouTube, um diese Einstellungen zu öffnen.',
 
   'feed.title': 'Feed & Shorts',
   'feed.groupHide': 'Aus dem Feed ausblenden',
@@ -67,6 +69,17 @@ const de = {
   'player.newestComments': 'Kommentare: neueste zuerst',
   'player.newestCommentsHint': 'Sortiert Kommentare beim Öffnen eines Videos nach Datum statt nach "Top".',
 
+  'player.groupPage': 'Videoseite',
+  'cat.optimize': 'Optimierung',
+  'optimize.title': 'Optimierung',
+  'optimize.ambientOff.label': 'Ambientemodus deaktivieren',
+  'optimize.ambientOff.hint': 'Entfernt den Schein hinter dem Video (eine Canvas, die ständig neu gezeichnet wird). Spart CPU, GPU und Akku.',
+  'optimize.noHoverPreview.label': 'Keine Vorschau beim Überfahren',
+  'optimize.noHoverPreview.hint': 'Verhindert, dass Vorschaubilder beim Überfahren automatisch eine Vorschau abspielen. Leichterer Feed, weniger Daten.',
+  'optimize.noAnimations.label': 'Animationen deaktivieren',
+  'optimize.noAnimations.hint': 'Entfernt Oberflächenübergänge und Animationen, sodass sich Menüs und Navigation sofort anfühlen.',
+  'optimize.preconnect.label': 'Vorab mit Servern verbinden',
+  'optimize.preconnect.hint': 'Wärmt die Verbindung zu den Asset-Servern von YouTube vor, um etwas Ladezeit zu sparen.',
   'appearance.title': 'Design',
   'appearance.palette': 'Palette',
   'appearance.custom': 'Benutzerdefiniert',
@@ -120,6 +133,12 @@ const de = {
   'color.magenta': 'Magenta',
   'color.fuchsia': 'Fuchsia',
   'color.raspberry': 'Himbeere',
+  'general.appearance': 'Dieses Fenster',
+  'general.theme': 'Heller / dunkler Modus',
+  'general.themeHint': 'Helle oder dunkle Farben für dieses Einstellungsfenster.',
+  'theme.system': 'System',
+  'theme.dark': 'Dunkel',
+  'theme.light': 'Hell',
 };
 
 export default de;

@@ -20,6 +20,8 @@ const ja = {
   'general.reset': 'リセット',
   'general.resetConfirm': 'すべての設定をリセットしますか？',
   'general.invalidJson': 'このファイルは有効なJSONではありません。',
+  'general.launcher': 'YouTube上のPlayPatchボタン',
+  'general.launcherHint': 'この設定を開くボタンをYouTubeの上部バーに表示します。',
 
   'feed.title': 'フィードとShorts',
   'feed.groupHide': 'フィードから非表示',
@@ -67,6 +69,17 @@ const ja = {
   'player.newestComments': 'コメント: 新しい順',
   'player.newestCommentsHint': '動画を開いたとき、コメントを「評価順」ではなく日付順に並べ替えます。',
 
+  'player.groupPage': '動画ページ',
+  'cat.optimize': '最適化',
+  'optimize.title': '最適化',
+  'optimize.ambientOff.label': 'アンビエントモードを無効にする',
+  'optimize.ambientOff.hint': '動画の背後に表示される光彩（常に再描画されるキャンバス）を削除します。CPU、GPU、バッテリーを節約します。',
+  'optimize.noHoverPreview.label': 'ホバープレビューを無効にする',
+  'optimize.noHoverPreview.hint': 'サムネイルにカーソルを合わせたときのプレビュー自動再生を停止します。フィードが軽くなり、データ通信量も減ります。',
+  'optimize.noAnimations.label': 'アニメーションを無効にする',
+  'optimize.noAnimations.hint': 'インターフェースのトランジションとアニメーションを削除し、メニューやナビゲーションを瞬時に感じられるようにします。',
+  'optimize.preconnect.label': 'サーバーへ事前接続する',
+  'optimize.preconnect.hint': 'YouTube のアセットサーバーへの接続をあらかじめ準備し、読み込み時間を少し短縮します。',
   'appearance.title': 'テーマ',
   'appearance.palette': 'パレット',
   'appearance.custom': 'カスタム',
@@ -120,6 +133,12 @@ const ja = {
   'color.magenta': 'マゼンタ',
   'color.fuchsia': 'フューシャ',
   'color.raspberry': 'ラズベリー',
+  'general.appearance': 'このウィンドウ',
+  'general.theme': 'ライト / ダークモード',
+  'general.themeHint': 'この設定ウィンドウの明暗の配色。',
+  'theme.system': 'システム',
+  'theme.dark': 'ダーク',
+  'theme.light': 'ライト',
 };
 
 export default ja;
