@@ -13,41 +13,46 @@ const STEP = 5;
 export class WheelVolumeFeature implements YouTubeFeature {
   readonly id = 'wheelVolume';
   private enabled = false;
-  private hooked: HTMLElement | null = null;
+  private installed = false;
 
   apply(settings: Settings): void {
     this.enabled = settings.player.wheelVolume;
-    if (!this.enabled) {
-      this.detach();
-      return;
-    }
-    const player = document.querySelector<HTMLElement>('#movie_player');
-    if (!player || player === this.hooked) return;
-    this.detach();
-    player.addEventListener('wheel', this.onWheel, { passive: false });
-    this.hooked = player;
+    this.install();
   }
 
   clear(): void {
     this.enabled = false;
-    this.detach();
+    this.uninstall();
   }
 
   dispose(): void {
-    this.detach();
+    this.uninstall();
   }
 
-  private detach(): void {
-    this.hooked?.removeEventListener('wheel', this.onWheel);
-    this.hooked = null;
+  private install(): void {
+    if (this.installed) return;
+    document.addEventListener('wheel', this.onWheel, { capture: true, passive: false });
+    this.installed = true;
+  }
+
+  private uninstall(): void {
+    if (!this.installed) return;
+    document.removeEventListener('wheel', this.onWheel, { capture: true } as EventListenerOptions);
+    this.installed = false;
   }
 
   private onWheel = (e: WheelEvent): void => {
-    const mp = document.querySelector('#movie_player') as MoviePlayer | null;
-    if (!this.enabled || typeof mp?.getVolume !== 'function' || typeof mp.setVolume !== 'function') return;
+    const player = (e.target as Element | null)?.closest?.('#movie_player') as MoviePlayer | null;
+    if (!player) return;
+    if (!this.enabled) {
+      e.stopImmediatePropagation();
+      return;
+    }
+    if (typeof player.getVolume !== 'function' || typeof player.setVolume !== 'function') return;
     e.preventDefault();
-    const next = Math.max(0, Math.min(100, Math.round(mp.getVolume()) + (e.deltaY < 0 ? STEP : -STEP)));
-    if (next > 0 && mp.isMuted?.()) mp.unMute?.();
-    mp.setVolume(next);
+    e.stopImmediatePropagation();
+    const next = Math.max(0, Math.min(100, Math.round(player.getVolume()) + (e.deltaY < 0 ? STEP : -STEP)));
+    if (next > 0 && player.isMuted?.()) player.unMute?.();
+    player.setVolume(next);
   };
 }

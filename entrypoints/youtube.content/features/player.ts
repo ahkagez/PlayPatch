@@ -7,6 +7,30 @@ const MAX_BOOST = 5;
 const MIN_SPEED = 0.25;
 const MAX_SPEED = 4;
 
+const QUALITY_ORDER = ['highres', 'hd2880', 'hd2160', 'hd1440', 'hd1080', 'hd720', 'large', 'medium', 'small', 'tiny'];
+
+function bestQualityAtMost(desired: string, available: string[]): string | null {
+  const di = QUALITY_ORDER.indexOf(desired);
+  if (di === -1) return null;
+  let best: string | null = null;
+  let bestIdx = Infinity;
+  let lowest: string | null = null;
+  let lowestIdx = -1;
+  for (const q of available) {
+    const i = QUALITY_ORDER.indexOf(q);
+    if (i === -1) continue;
+    if (i >= di && i < bestIdx) {
+      bestIdx = i;
+      best = q;
+    }
+    if (i > lowestIdx) {
+      lowestIdx = i;
+      lowest = q;
+    }
+  }
+  return best ?? lowest;
+}
+
 interface AudioGraph {
   source: MediaElementAudioSourceNode;
   gain: GainNode;
@@ -16,6 +40,7 @@ interface MoviePlayer extends HTMLElement {
   getAvailableQualityLevels?: () => string[];
   getPlaybackQuality?: () => string;
   setPlaybackQualityRange?: (min: string, max: string) => void;
+  setPlaybackQuality?: (quality: string) => void;
 }
 
 export class PlayerFeature implements YouTubeFeature {
@@ -104,7 +129,10 @@ export class PlayerFeature implements YouTubeFeature {
   private hookVideo(video: HTMLVideoElement): void {
     if (this.videoHooked.has(video)) return;
     this.videoHooked.add(video);
-    video.addEventListener('loadeddata', () => this.assertSpeed(video));
+    video.addEventListener('loadeddata', () => {
+      this.assertSpeed(video);
+      this.reassertQuality();
+    });
     video.addEventListener('ratechange', () => this.rememberRate(video));
   }
 
@@ -122,16 +150,29 @@ export class PlayerFeature implements YouTubeFeature {
   }
 
   private applyQuality(videoId: string, quality: string): void {
-    if (quality === 'auto') return;
+    if (quality === 'auto') {
+      this.qualityKey = `${videoId}|auto`;
+      return;
+    }
     const key = `${videoId}|${quality}`;
     if (key === this.qualityKey) return;
     const player = document.querySelector<MoviePlayer>('#movie_player');
     const levels = player?.getAvailableQualityLevels?.();
-    if (!levels || !player?.setPlaybackQualityRange) return;
+    if (!player?.setPlaybackQualityRange || !levels) return;
+    const real = levels.filter((q) => q !== 'auto');
+    if (real.length === 0) return;
+    const best = bestQualityAtMost(quality, real);
+    if (!best) return;
+    player.setPlaybackQualityRange(best, best);
+    player.setPlaybackQuality?.(best);
     this.qualityKey = key;
-    if (levels.includes(quality) && player.getPlaybackQuality?.() !== quality) {
-      player.setPlaybackQualityRange(quality, quality);
-    }
+  }
+
+  private reassertQuality(): void {
+    if (!this.settings) return;
+    this.qualityKey = '';
+    const videoId = new URLSearchParams(location.search).get('v') ?? location.pathname;
+    this.applyQuality(videoId, this.settings.player.defaultQuality);
   }
 
   private injectPipButton(): void {

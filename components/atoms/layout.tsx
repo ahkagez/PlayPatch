@@ -58,7 +58,7 @@ export function Row({
 }
 
 export function Grid2({ gap = space[4], children }: { gap?: number; children: ComponentChildren }) {
-  return <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap }}>{children}</div>;
+  return <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(160px, 100%), 1fr))', gap }}>{children}</div>;
 }
 
 export function Divider() {

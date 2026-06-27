@@ -17,9 +17,18 @@ export default defineConfig({
     },
     permissions: ['storage'],
     host_permissions: ['*://*.youtube.com/*'],
+    web_accessible_resources: [
+      {
+        resources: ['icon/16.png', 'icon/32.png', 'icon/48.png', 'icon/128.png'],
+        matches: ['*://*.youtube.com/*'],
+      },
+    ],
     browser_specific_settings: {
       gecko: {
         id: 'playpatch@local.extension',
+        data_collection_permissions: {
+          required: ['none'],
+        },
       },
     },
   },

@@ -9,6 +9,8 @@ import { WheelVolumeFeature } from './features/wheel-volume';
 import { CommentsSortFeature } from './features/comments-sort';
 import { ShortsRedirectFeature } from './features/shorts-redirect';
 import { ShortsLoadFixFeature } from './features/shorts-fix';
+import { PerformanceFeature } from './features/performance';
+import { Launcher } from './launcher';
 import { primeAccentFromCache } from '@/lib/appearance-cache';
 import { primeShortsRedirect } from '@/lib/shorts-cache';
 
@@ -30,8 +32,12 @@ export default defineContentScript({
       new CommentsSortFeature(),
       shortsRedirect,
       new ShortsLoadFixFeature(),
+      new PerformanceFeature(),
     ];
     ctx.onInvalidated(() => features.forEach((f) => f.dispose?.()));
+
+    const launcher = new Launcher();
+    ctx.onInvalidated(() => launcher.dispose());
 
     let settings: Settings = await loadSettings();
 
@@ -41,11 +47,13 @@ export default defineContentScript({
     };
 
     applyAll();
+    launcher.setVisible(settings.showLauncher);
 
     ctx.onInvalidated(
       watchSettings((next) => {
         settings = next;
         applyAll();
+        launcher.setVisible(next.showLauncher);
       }),
     );
 
@@ -54,6 +62,7 @@ export default defineContentScript({
       void loadSettings().then((next) => {
         settings = next;
         applyAll();
+        launcher.setVisible(next.showLauncher);
       });
     });
 
@@ -77,10 +86,14 @@ export default defineContentScript({
       shortsRedirect.redirect(dest);
     });
 
-    ctx.addEventListener(window, 'yt-navigate-finish', applyAll);
+    ctx.addEventListener(window, 'yt-navigate-finish', () => {
+      launcher.ensureButton();
+      applyAll();
+    });
 
     let scheduled = false;
     const observer = new MutationObserver(() => {
+      launcher.ensureButton();
       if (!settings.enabledOnYouTube || scheduled) return;
       scheduled = true;
       requestAnimationFrame(() => {
