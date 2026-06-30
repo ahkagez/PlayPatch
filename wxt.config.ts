@@ -19,7 +19,7 @@ export default defineConfig({
     host_permissions: ['*://*.youtube.com/*'],
     web_accessible_resources: [
       {
-        resources: ['icon/16.png', 'icon/32.png', 'icon/48.png', 'icon/128.png'],
+        resources: ['icon/16.png', 'icon/32.png', 'icon/48.png', 'icon/128.png', 'yt-player-main.js'],
         matches: ['*://*.youtube.com/*'],
       },
     ],

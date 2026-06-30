@@ -2,7 +2,7 @@
   "name": "playpatch",
   "description": "Mejora YouTube: modo foco, limpieza del feed y Shorts, filtros, reproductor (volumen, velocidad, calidad, picture-in-picture) y recoloreado de la interfaz. Todo local.",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "scripts": {
     "dev": "wxt",

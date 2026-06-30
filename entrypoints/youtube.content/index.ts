@@ -1,3 +1,4 @@
+import { injectScript } from 'wxt/utils/inject-script';
 import { loadSettings, watchSettings, saveSettings } from '@/lib/storage';
 import type { Settings } from '@/lib/types';
 import type { YouTubeFeature } from '@/lib/feature';
@@ -21,6 +22,7 @@ export default defineContentScript({
   async main(ctx) {
     primeAccentFromCache();
     primeShortsRedirect();
+    void injectScript('/yt-player-main.js', { keepInDom: true });
 
     const shortsRedirect = new ShortsRedirectFeature();
     const features: YouTubeFeature[] = [

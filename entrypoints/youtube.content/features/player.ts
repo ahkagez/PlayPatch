@@ -6,41 +6,11 @@ const MIN_BOOST = 1;
 const MAX_BOOST = 5;
 const MIN_SPEED = 0.25;
 const MAX_SPEED = 4;
-
-const QUALITY_ORDER = ['highres', 'hd2880', 'hd2160', 'hd1440', 'hd1080', 'hd720', 'large', 'medium', 'small', 'tiny'];
-
-function bestQualityAtMost(desired: string, available: string[]): string | null {
-  const di = QUALITY_ORDER.indexOf(desired);
-  if (di === -1) return null;
-  let best: string | null = null;
-  let bestIdx = Infinity;
-  let lowest: string | null = null;
-  let lowestIdx = -1;
-  for (const q of available) {
-    const i = QUALITY_ORDER.indexOf(q);
-    if (i === -1) continue;
-    if (i >= di && i < bestIdx) {
-      bestIdx = i;
-      best = q;
-    }
-    if (i > lowestIdx) {
-      lowestIdx = i;
-      lowest = q;
-    }
-  }
-  return best ?? lowest;
-}
+const QUALITY_ATTR = 'data-pp-quality';
 
 interface AudioGraph {
   source: MediaElementAudioSourceNode;
   gain: GainNode;
-}
-
-interface MoviePlayer extends HTMLElement {
-  getAvailableQualityLevels?: () => string[];
-  getPlaybackQuality?: () => string;
-  setPlaybackQualityRange?: (min: string, max: string) => void;
-  setPlaybackQuality?: (quality: string) => void;
 }
 
 export class PlayerFeature implements YouTubeFeature {
@@ -54,7 +24,6 @@ export class PlayerFeature implements YouTubeFeature {
   private settings: Settings | null = null;
   private lastVideoId = '';
   private lastSpeed = -1;
-  private qualityKey = '';
 
   constructor(private readonly onPersist: (s: Settings) => void) {}
 
@@ -76,7 +45,7 @@ export class PlayerFeature implements YouTubeFeature {
     this.lastSpeed = desired;
     if (newVideo || speedChanged) this.assertSpeed(video, desired);
 
-    this.applyQuality(videoId, p.defaultQuality);
+    this.applyQuality(p.defaultQuality);
     this.injectPipButton();
   }
 
@@ -84,7 +53,7 @@ export class PlayerFeature implements YouTubeFeature {
     this.live.forEach((g) => (g.gain.gain.value = 1));
     this.removePipButton();
     this.lastSpeed = -1;
-    this.qualityKey = '';
+    document.documentElement.removeAttribute(QUALITY_ATTR);
   }
 
   dispose(): void {
@@ -129,10 +98,7 @@ export class PlayerFeature implements YouTubeFeature {
   private hookVideo(video: HTMLVideoElement): void {
     if (this.videoHooked.has(video)) return;
     this.videoHooked.add(video);
-    video.addEventListener('loadeddata', () => {
-      this.assertSpeed(video);
-      this.reassertQuality();
-    });
+    video.addEventListener('loadeddata', () => this.assertSpeed(video));
     video.addEventListener('ratechange', () => this.rememberRate(video));
   }
 
@@ -149,30 +115,9 @@ export class PlayerFeature implements YouTubeFeature {
     this.onPersist({ ...this.settings, player: { ...this.settings.player, speed: next } });
   }
 
-  private applyQuality(videoId: string, quality: string): void {
-    if (quality === 'auto') {
-      this.qualityKey = `${videoId}|auto`;
-      return;
-    }
-    const key = `${videoId}|${quality}`;
-    if (key === this.qualityKey) return;
-    const player = document.querySelector<MoviePlayer>('#movie_player');
-    const levels = player?.getAvailableQualityLevels?.();
-    if (!player?.setPlaybackQualityRange || !levels) return;
-    const real = levels.filter((q) => q !== 'auto');
-    if (real.length === 0) return;
-    const best = bestQualityAtMost(quality, real);
-    if (!best) return;
-    player.setPlaybackQualityRange(best, best);
-    player.setPlaybackQuality?.(best);
-    this.qualityKey = key;
-  }
-
-  private reassertQuality(): void {
-    if (!this.settings) return;
-    this.qualityKey = '';
-    const videoId = new URLSearchParams(location.search).get('v') ?? location.pathname;
-    this.applyQuality(videoId, this.settings.player.defaultQuality);
+  private applyQuality(quality: string): void {
+    const el = document.documentElement;
+    if (el.getAttribute(QUALITY_ATTR) !== quality) el.setAttribute(QUALITY_ATTR, quality);
   }
 
   private injectPipButton(): void {
